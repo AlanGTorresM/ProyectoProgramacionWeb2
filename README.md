@@ -1,17 +1,22 @@
-1. JavaScript y Node.js
-JavaScript: Es el lenguaje principal que utilizamos tanto en el frontend como en el backend. Permite la interactividad en la interfaz del usuario y la lógica en el servidor.
-Node.js: Es el entorno de ejecución de JavaScript en el backend. Aquí se procesa la lógica del servidor, se manejan peticiones HTTP y se conecta con la base de datos. También permite usar módulos para estructurar mejor el código.
-2. Plantillas HTML
-Sirven para generar vistas dinámicas que se envían al navegador del cliente. Usando motores de plantillas como EJS o Handlebars (comúnmente usados con Node.js), se pueden mezclar HTML estático con datos dinámicos provenientes del backend.
-3. Tailwind CSS
-Proporciona estilos CSS prediseñados mediante clases utilitarias. Se aplica directamente en las plantillas HTML, permitiendo un diseño eficiente y responsivo.
-Se integra fácilmente porque no requiere configuraciones complicadas y funciona bien con el HTML generado dinámicamente.
-4. Supabase
-Es la base de datos de la aplicación. Supabase se comunica con el backend en Node.js para manejar operaciones como consultas y actualizaciones de datos.
-Proporciona APIs que puedes usar en el servidor para autenticar usuarios, manejar datos y ejecutar funciones relacionadas con tu lógica de negocio.
-Relación entre las herramientas:
-El navegador del cliente envía solicitudes al servidor (Node.js).
-El servidor usa JavaScript para manejar la lógica de la aplicación, recuperar datos de Supabase y procesar la información.
-Los datos dinámicos se integran en plantillas HTML, que generan vistas personalizadas.
-Tailwind CSS estiliza estas vistas para proporcionar una experiencia visual atractiva.
-El navegador del cliente recibe las vistas generadas, junto con la interactividad manejada por JavaScript.
+# Programación Web 2
+## Objetivos del sistema.
+Este sistema tiene como objetivo el hacer una pagina de transacciones, en la que sea muy facil de usar por cada usuario. Esta pagina es muy simple ya que no existe tanta complejidad.
+A su vez queremos que nuestros clientes tanto vendedores como compradores obtengan graficos de sus ventas y gastos.
+## Descripción de funcionalidades.
+Si hablamos del código como tal, entregaremos un pdf en el que documente todos los scripts y como funcionan.
+Al hacer esta pagina hicimos uso de API's como lo es supabase, el cual es un servidor que tiene bases de datos y un lugar para almacenar toda clase de información.
+Lamentablemente nuestra pagina no es segura, ya que es vulnerable a ataques de inyección SQL y hasta robo de credenciales, ya que no hicimos uso de Node para el backend,
+todo y absolutamente todo esta desarrollado para el entorno del buscador. No existen Hasheos de contraseñas y no hay variables de entorno para hacer nuestra pagina mas segura.
+Todo se resume a código JS que hace uso del LocalStorage para guardar una sesión y que al abrir o refrescar de nuevo la pagina no vuelva a pedir los datos, hicimos uso de JSON
+no tanto para comunicarnos con la API de supabase, ya que esta no acepta JSON ni fetch, ya que dentro de sí las implementa. Sino que hicimos uso de JSON para guardar y recurperar cosas
+del local storage. Tambien hicimos objetos que guardaban información tanto para SUPABASE como para la libreria de Graficas.
+### Si se quiere saber como hicimos todos los códigos, estan dentro de la documentación.
+
+## Como esta construido nuestro código?
+Intentamos que cada uno de nuestros archivos sean como les hemos nombrado. El orden esta en dividir el documento en carpetas y en ellas se sabe que van a ser las cosas que contiene
+
+## Como usar la pagina
+Bueno básicamente creas una sesión o crear un nuevo usuario, en automatico te redirige a otra sección para comprar y vender cosas. Aqui no existen roles, puesto que es más complejidad.
+Aquí cualquier persona es libre de comprar y vender a su gusto y ver sus transacciones que realizo.
+### Punto importante
+Si publicas algo, tu no vas a ver tus productos en la página principal, sin embargo otros usuarios si
